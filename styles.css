@@ -1,0 +1,515 @@
+@font-face {
+  font-family: "Pieces of Eight";
+  src: url("fonts/pieces_of_eight/Pieces\ of\ Eight.ttf") format("truetype");
+}
+
+.eagle-lake-regular {
+  font-family: "Eagle Lake", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.logo {
+  flex-basis: 25%;
+}
+
+.logo img {
+  height: 150px;
+  max-width: 100%;
+  margin-left: 15%;
+}
+
+.titulo {
+  flex-basis: 60%;
+}
+
+.titulo h1 {
+  margin-left: 25%;
+  font-size: 60px;
+  font-family: "Pieces of Eight", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Cambia la dirección del flex a columna para apilar los elementos */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .logo {
+    flex-basis: 100%; /* La logo ocupa toda la fila */
+    margin-left: 0; /* Sin margen a la izquierda */
+    text-align: center; /* Centra la logo */
+    margin-bottom: 10px; /* Agrega un poco de espacio debajo */
+  }
+
+  .logo img {
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    max-height: 150px; /* Asegura que la altura máxima sea 150px */
+    margin-left: 0; /* Sin margen en pantallas pequeñas */
+  }
+
+  .titulo {
+    flex-basis: 100%; /* Título ocupa toda la fila */
+    margin-left: 0; /* Sin margen a la izquierda */
+    text-align: center; /* Centra el título */
+  }
+
+  .titulo h1 {
+    margin-left: 0; /* Sin margen a la izquierda */
+    margin-bottom: 10px; /* Agrega un poco de espacio debajo del título */
+  }
+}
+
+.navbar {
+  font-family: "Eagle Lake";
+  background-color: rgb(18, 77, 36);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.navbar .navbar-brand:hover {
+  transform: scale(1.1);
+}
+
+.navbar .nav-link {
+  color: white;
+  font-size: 1.25rem;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #dcdcdc; /* Cambia ligeramente el color en hover */
+  transform: translateY(-3px); /* Sutil animación hacia arriba */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28125, 125, 125, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  filter: brightness(0) invert(1); /* Icono blanco */
+}
+
+.dropdown-menu {
+  background-color: rgb(18, 77, 36);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .btn-outline-light {
+  border-color: white;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: white;
+  color: rgb(18, 77, 36);
+  transform: scale(1.05); /* Sutil aumento en tamaño */
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 1.1rem;
+    margin: 5px 0;
+  }
+}
+
+.fondo-imagen {
+  background-image: url("imagenes/fondobody.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed; /* Opcional */
+  flex-direction: column;
+}
+
+.contenido {
+  background-color: rgba(0, 0, 0, 0.938); /* 70% de opacidad */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+  flex-basis: 50%;
+}
+
+.contenido * {
+  color: #fff;
+  font-family: "Eagle Lake"
+}
+
+.contenido h1 {
+margin-bottom: 5%;
+}
+.contenido h2 {margin-bottom: 10%;
+  
+}
+
+.contenido p {margin-top: 5%; text-align: right;
+}
+
+.footer {
+  background-color: rgb(18, 77, 36);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Eagle Lake";
+}
+
+.footer .social-icon,
+.footer .menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  gap: 15px;
+}
+
+.footer .social-icon .icon {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icon .icon:hover {
+  color: black;
+}
+
+.footer .menu .menu-icons {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer .menu .menu-icons:hover {
+  color: black;
+}
+
+.footer .texto {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #dcdcdc;
+}
+
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("imagenes/fondobody.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("imagenes/fondobody.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.contenido {
+  background-color: rgba(0, 0, 0, 0.9); /* Mantiene el fondo casi negro */
+  backdrop-filter: blur(5px); /* Menor blur para un efecto más sutil */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenido:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Más sombra en hover */
+}
+
+.contenido h1,
+.contenido h2 {
+  color: #f4f4f4;
+  font-family: "Pieces of Eight", sans-serif;
+  margin-bottom: 20px;
+}
+
+.contenido p {
+  color: #dcdcdc;
+  font-family: "Eagle Lake", serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.button-explore {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button-explore:hover {
+  background-color: #27ae60;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .contenido h1 {
+    font-size: 2rem;
+  }
+
+  .contenido h2 {
+    font-size: 1.5rem;
+  }
+
+  .contenido p {
+    font-size: 1rem;
+  }
+}
+
+.pirate-font {
+  font-family: "Eagle Lake", cursive;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2ecc71;
+}
+
+.custom-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.custom-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+}
+
+.card-text.text-muted {
+  font-size: 0.9rem;
+  color: #dcdcdc;
+}
+
+
+.productos-semilllas {
+  background-color: #f7f7f7;
+  padding: 40px 0;
+}
+
+.pirate-font {
+  font-family: "Eagle Lake", cursive;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2ecc71;
+}
+
+.custom-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.custom-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+}
+
+.custom-card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.productos-semilllas {
+  background-color: rgba(0, 0, 0, 0.6); /* Negro con 60% de opacidad */
+  padding: 40px 0;
+}
+
+.pirate-font {
+  font-family: "Eagle Lake", cursive;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2ecc71;
+}
+
+.custom-card {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente para las tarjetas */
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.custom-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.custom-card .card-text {
+  font-size: 1rem;
+}
+
+.custom-card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.contacto {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro con 60% de opacidad */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-contacto .form-control {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia para los inputs */
+  color: #333;
+}
+
+.form-contacto button {
+  background-color: #2ecc71;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.form-contacto button:hover {
+  background-color: #28a745;
+}
+
+.text-center {
+  color: #fff;
+}
+
+iframe {
+  border-radius: 10px;
+  border: none;
+}
